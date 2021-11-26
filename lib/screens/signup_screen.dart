@@ -1,10 +1,10 @@
 import 'package:bmi/helpers/constents.dart';
-import 'package:bmi/screens/signup_screen.dart';
+import 'package:bmi/screens/login_screen.dart';
 import 'package:bmi/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen();
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
               height: space,
             ),
             Text(
-              "Welcom Back",
+              "Create New Account",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: kAppBlueColor,
@@ -38,28 +38,36 @@ class LoginScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             const Text(
-              "if you already have account , log in",
+              "if you don't have account",
               textAlign: TextAlign.center,
             ),
             const SizedBox(
               height: 20,
             ),
-            const AppTextField(title: "Username"),
+            const AppTextField(title: "name"),
             const SizedBox(
-              height: 20,
+              height: 10,
+            ),
+            const AppTextField(title: "E-Mail"),
+            const SizedBox(
+              height: 10,
             ),
             const AppTextField(title: "Password"),
+            const SizedBox(
+              height: 10,
+            ),
+            const AppTextField(title: "Re-Password"),
             SizedBox(
-              height: space / 2,
+              height: space / 2.4,
             ),
             ElevatedButton(
               onPressed: () {},
               child: const Text(
-                "LOG IN ",
+                "CREATE",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 22,
@@ -78,14 +86,12 @@ class LoginScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("You Don't Have An Account?"),
+                const Text("You Have An Account?"),
                 TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (c) {
-                      return const SignUpScreen();
-                    }));
+                    Navigator.pop(context);
                   },
-                  child: const Text("Sign Up"),
+                  child: const Text("login"),
                 ),
               ],
             ),
